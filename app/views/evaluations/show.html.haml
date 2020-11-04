@@ -1,0 +1,10 @@
+%h1
+  みんなからの評価
+  = @evaluation.comment
+  .pie-form
+    %p ①内容の理解しやすさ
+    = pie_chart @aggregate, width: "600px"
+  .pie-form
+    %p ②価格設定
+    = pie_chart @second_aggregate, width: "600px"
+  = link_to '戻る', post_path

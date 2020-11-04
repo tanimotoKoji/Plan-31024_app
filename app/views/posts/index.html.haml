@@ -1,0 +1,30 @@
+%p#notice= notice
+%h1 アンケートサイト
+- if user_signed_in?
+  ログインしていますよ！
+  \#{link_to 'ログアウト', destroy_user_session_path, method: :delete}
+- else
+  = link_to '新規ユーザー登録', new_user_registration_path
+  = link_to 'ログイン', new_user_session_path
+%table
+  %thead
+    %tr
+      %th Title
+      %th Content
+      %th Pay
+      %th Price
+      %th User
+      %th{:colspan => "3"}
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.content
+        %td= post.pay_id
+        %td= post.price
+        %td= post.user.nickname
+        %td= link_to 'Show', post
+        %td= link_to 'Edit', edit_post_path(post)
+        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Post', new_post_path

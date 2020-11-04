@@ -1,0 +1,194 @@
+%body
+  .container
+    %header
+      .row
+        .col-sm-9
+          %h1 フィードバックフォーム
+        .col-sm-3
+          %a{:href => "/"} HOMEへ戻る
+  %hr/
+  .container
+    .row
+      .col-sm-10.col-sm-offset-2
+        %p この度は、本投稿をご確認頂き誠にありがとうございます。恐れ入りますが、以下のフォームにご意見、ご感想をご記入頂き、送信して頂けると幸いです。
+  = form_with(model: @evaluation, local: true) do |f|
+    .form_group
+      .radio-label
+        = f.label :"第1問"
+        %label
+          = f.radio_button :first_id, 1
+          大変良い
+        %label
+          = f.radio_button :first_id, 2
+          良い
+        %label
+          = f.radio_button :first_id, 3
+          普通
+        %label
+          = f.radio_button :first_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :first_id, 5
+          良くない
+      .radio-label
+        = f.label :"第2問"
+        %label
+          = f.radio_button :second_id, 1
+          大変良い
+        %label
+          = f.radio_button :second_id, 2
+          良い
+        %label
+          = f.radio_button :second_id, 3
+          普通
+        %label
+          = f.radio_button :second_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :second_id, 5
+          良くない
+      .radio-label
+        = f.label :"第3問"
+        %label
+          = f.radio_button :third_id, 1
+          大変良い
+        %label
+          = f.radio_button :third_id, 2
+          良い
+        %label
+          = f.radio_button :third_id, 3
+          普通
+        %label
+          = f.radio_button :third_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :third_id, 5
+          良くない
+      .radio-label
+        = f.label :"第4問"
+        %label
+          = f.radio_button :fourth_id, 1
+          大変良い
+        %label
+          = f.radio_button :fourth_id, 2
+          良い
+        %label
+          = f.radio_button :fourth_id, 3
+          普通
+        %label
+          = f.radio_button :fourth_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :fourth_id, 5
+          良くない
+      .radio-label
+        = f.label :"第5問"
+        %label
+          = f.radio_button :fifth_id, 1
+          大変良い
+        %label
+          = f.radio_button :fifth_id, 2
+          良い
+        %label
+          = f.radio_button :fifth_id, 3
+          普通
+        %label
+          = f.radio_button :fifth_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :fifth_id, 5
+          良くない
+      .radio-label
+        = f.label :"第6問"
+        %label
+          = f.radio_button :sixth_id, 1
+          大変良い
+        %label
+          = f.radio_button :sixth_id, 2
+          良い
+        %label
+          = f.radio_button :sixth_id, 3
+          普通
+        %label
+          = f.radio_button :sixth_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :sixth_id, 5
+          良くない
+      .radio-label
+        = f.label :"第7問"
+        %label
+          = f.radio_button :seventh_id, 1
+          大変良い
+        %label
+          = f.radio_button :seventh_id, 2
+          良い
+        %label
+          = f.radio_button :seventh_id, 3
+          普通
+        %label
+          = f.radio_button :seventh_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :seventh_id, 5
+          良くない
+      .radio-label
+        = f.label :"第8問"
+        %label
+          = f.radio_button :eighth_id, 1
+          大変良い
+        %label
+          = f.radio_button :eighth_id, 2
+          良い
+        %label
+          = f.radio_button :eighth_id, 3
+          普通
+        %label
+          = f.radio_button :eighth_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :eighth_id, 5
+          良くない
+      .radio-label
+        = f.label :"第9問"
+        %label
+          = f.radio_button :ninth_id, 1
+          大変良い
+        %label
+          = f.radio_button :ninth_id, 2
+          良い
+        %label
+          = f.radio_button :ninth_id, 3
+          普通
+        %label
+          = f.radio_button :ninth_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :ninth_id, 5
+          良くない
+      .radio-label
+        = f.label :"第10問"
+        %label
+          = f.radio_button :tenth_id, 1
+          大変良い
+        %label
+          = f.radio_button :tenth_id, 2
+          良い
+        %label
+          = f.radio_button :tenth_id, 3
+          普通
+        %label
+          = f.radio_button :tenth_id, 4
+          あまり良くない
+        %label
+          = f.radio_button :tenth_id, 5
+          良くない
+      .comment
+        = f.label :コメント
+        = f.text_area :comment
+      .actions
+        = f.submit "送信", class: 'btn'
+  %hr/
+  .container
+    %footer
+      %p © H20 space
